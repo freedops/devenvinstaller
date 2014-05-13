@@ -1,0 +1,9 @@
+project_name: Cpp_test
+owner: me
+owner_email: me@myproject
+root_dist: centos
+dist_tag: centos6
+extra_sw: git, gcc-c++
+version_control: git
+local_folder: ~/home/test
+project_destination: /var/local/project

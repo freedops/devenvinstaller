@@ -1,0 +1,8 @@
+git_get: git clone
+git_update: git pull
+
+centos_update: yum update -y
+centos_install: yum install -y
+
+ubuntu_update: apt-get update -y
+ubuntu_install: apt-get install -y

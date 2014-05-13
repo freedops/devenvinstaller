@@ -1,0 +1,8 @@
+#!bin/bash
+docker build --tag="$project_name" Docker/ 
+docker save --output="$project_name.tar" $project_name
+rm installer
+mkdir installer 
+cp $project_name.tar installer/$project_name.tar
+cp setup.sh installer/setup.sh
+tar -cvfz $installer_name.tar installer/* 

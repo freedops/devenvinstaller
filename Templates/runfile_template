@@ -1,0 +1,6 @@
+#!bin/bash
+# run while in the project directory
+$update_project
+$build_command
+$test_command 
+

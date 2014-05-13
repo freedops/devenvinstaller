@@ -1,0 +1,12 @@
+project_name: cpp_test_ubuntu # the name of the project also used for git repository name, [a-0-9-_.] only
+installer_name: cpp_ubuntu # the name for the project installer (.tar is automatically appended)
+owner: me
+owner_email: me@myproject
+root_dist: ubuntu
+dist_tag: 14.04
+extra_sw: git build-essential
+version_control: git
+project_location: https://scott_reeve@bitbucket.org/scott_reeve/freedops_test.git
+project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
+build_command: sh build.sh
+test_command: ./main
