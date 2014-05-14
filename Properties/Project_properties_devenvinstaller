@@ -27,8 +27,8 @@ owner_email: info@freedops
 root_dist: dind
 dist_tag: latest
 extra_sw: git #iptables ca-certificates lxc cgroup-lite #docker.io 
-additional_commands1: #RUN ln -sf /usr/bin/docker.io /usr/local/bin/docker
-additional_commands2: #RUN docker version
+additional_commands1: VOLUME /var/lib/docker
+additional_commands2: CMD wrapdocker
 version_control: git
 project_location: https://github.com/freedops/devenvinstaller.git
 project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
