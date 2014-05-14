@@ -25,7 +25,7 @@ installer_name: cpp_ubuntu.tar # the name for the project installer
 owner: me
 owner_email: me@myproject
 root_dist: ubuntu
-dist_tag: 14.04
+dist_tag: trusty
 extra_sw: git build-essential
 version_control: git
 project_location: https://scott_reeve@bitbucket.org/scott_reeve/freedops_test.git

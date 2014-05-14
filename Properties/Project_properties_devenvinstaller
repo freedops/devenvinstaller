@@ -1,10 +1,5 @@
-# Freedops Dev env installer 
-#
-# VERSION       1.0
-#
-# 
-# This file is used to generate the base installer
-###########################################################
+# This is an example properties file that builds an Ubuntu project container
+# for a simple C++ program.
 
 # Copyright 2014 freedops.org
 #
@@ -25,21 +20,16 @@
 #
 # If not, see <http://www.gnu.org/licenses/>.
 
-FROM $root_dist:$dist_tag
-
-MAINTAINER $owner, $owner_email
-
-
-# housekeeping
-
-# make sure the package repository is up to date
-
-$os_extras
-RUN $update_os
-RUN $install_os_sw $extra_sw
-
-$additional_commands
-
-ADD Container/runfile.sh /var/local/runfile/runfile.sh
- 
-
+project_name: freedops # the name of the project also used for git repository name, [a-0-9-_.] only
+installer_name: freedops_installer.tar # the name for the project installer
+owner: freedops
+owner_email: info@freedops
+root_dist: ubuntu
+dist_tag: 14.04
+extra_sw: git docker
+additional_commands: RUN docker pull ubuntu:trusty
+version_control: git
+project_location: https://github.com/freedops/devenvinstaller.git
+project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
+build_command: sh build.sh Properties/Project_properties_ubuntu
+test_command: echo finished!

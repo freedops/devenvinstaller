@@ -43,6 +43,7 @@ class BuildDockerfile(object):
         # version control
         os = self.data.get_value('root_dist')
         
+        # operating system
         update_cmd = self.data.get_value('{}_update'.format(os))
         self.data.add('update_os', update_cmd, 'update os')
 

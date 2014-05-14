@@ -38,7 +38,7 @@ mkdir Docker
 mkdir Docker/Container
 mkdir installer
 
-export PYTHONPATH=~/workspace/Freedops/Python/Instance/:~/workspace/Freedops/Python/Props_man:/var/local/project/Freedops/Python/Props_man:/var/local/project/Freedops/Python/Instance
+export PYTHONPATH=~/workspace/Freedops/Python/Instance/:~/workspace/Freedops/Python/Props_man:/var/local/project/freedops/Python/Props_man:/var/local/project/freedops/Python/Instance
 python3 Python/create_build.py $1
 sh build_docker.sh
  
