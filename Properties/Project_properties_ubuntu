@@ -32,3 +32,5 @@ project_location: https://scott_reeve@bitbucket.org/scott_reeve/freedops_test.gi
 project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
 build_command: sh build.sh
 test_command: ./main
+additional_commands1: # no additional commands
+additional_commands2: # no additional commands

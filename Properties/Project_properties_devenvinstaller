@@ -24,10 +24,11 @@ project_name: freedops # the name of the project also used for git repository na
 installer_name: freedops_installer.tar # the name for the project installer
 owner: freedops
 owner_email: info@freedops
-root_dist: ubuntu
-dist_tag: 14.04
-extra_sw: git docker
-additional_commands: RUN docker pull ubuntu:trusty
+root_dist: dind
+dist_tag: latest
+extra_sw: git #iptables ca-certificates lxc cgroup-lite #docker.io 
+additional_commands1: #RUN ln -sf /usr/bin/docker.io /usr/local/bin/docker
+additional_commands2: #RUN docker version
 version_control: git
 project_location: https://github.com/freedops/devenvinstaller.git
 project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden

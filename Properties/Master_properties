@@ -26,5 +26,9 @@ git_update: git pull
 centos_update: yum update -y
 centos_install: yum install -y
 
-ubuntu_update: apt-get update -y
-ubuntu_install: apt-get install -y
+ubuntu_update: apt-get update -qq
+ubuntu_install: apt-get install -qqy
+ubuntu_extras: RUN echo deb http://archive.ubuntu.com/ubuntu trusty universe > /etc/apt/sources.list.d/universe.list
+
+dind_update: apt-get update -qq # docker in docker image based on ubuntu
+dind_install: apt-get install -qqy

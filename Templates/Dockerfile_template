@@ -34,12 +34,16 @@ MAINTAINER $owner, $owner_email
 
 # make sure the package repository is up to date
 
-$os_extras
+#$os_extras
 RUN $update_os
 RUN $install_os_sw $extra_sw
 
-$additional_commands
+#$additional_commands1
+#RUN systemctl start docker
+#$additional_commands2
 
 ADD Container/runfile.sh /var/local/runfile/runfile.sh
+VOLUME /var/lib/docker
+CMD wrapdocker
  
 
