@@ -1,4 +1,4 @@
-# This is an example properties file that builds a project container
+# This is an example properties file that builds an Ubuntu project container
 # for a simple C++ program.
 
 # Copyright 2014 freedops.org

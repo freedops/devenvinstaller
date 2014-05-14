@@ -28,7 +28,7 @@ if [ ! $1 ];then
 fi
 
 # Set up the docker file, create a shared volume with the host
-docker load -input="$project_name"
+docker load --input="$project_name.tar"
 docker run -v $1:$project_destination:rw --workdir="$project_destination" $project_name $get_project $project_destination/$project_name
 docker commit $(docker ps -lq) $project_name
 docker run -v $1:$project_destination:rw --workdir="$project_destination" $project_name chmod -R 777 $project_destination/$project_name
