@@ -26,6 +26,12 @@ if [ ! $1 ];then
     exit
 fi
 
+# this is to allow the installer for devenvinstall to be built outside a
+# docker container
+if [ ! $2 ];then
+    wrapdocker &
+fi
+
 # clean project files
 rm -rf Docker
 rm -f build_docker.sh

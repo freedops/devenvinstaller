@@ -40,6 +40,15 @@ class BuildDockerfile(object):
                                    master_file)
 
     def run_rules(self):
+        # check for additional command fields, and add blanks if needed
+        try:
+            self.data.get_value('additional_commands1')
+        except:
+            self.data.add('additional_commands1', '', 'No additional commands')
+        try:
+            self.data.get_value('additional_commands2')
+        except:
+            self.data.add('additional_commands2', '', 'No additional commands')
         # version control
         os = self.data.get_value('root_dist')
         
