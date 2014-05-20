@@ -36,4 +36,4 @@ docker commit $(docker ps -lq) $project_name
 docker run -v $1:$project_destination:rw $project_name ls $project_destination
 docker commit $(docker ps -lq) $project_name
 docker run -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name ls
-docker run -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile.sh
+docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile.sh

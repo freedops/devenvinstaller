@@ -22,7 +22,7 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 docker build --tag="$project_name" Docker/ 
-docker save --output="$project_name.tar" $project_name
+docker save $project_name > $project_name.tar
 
 cp $project_name.tar installer/$project_name.tar
 cp setup.sh installer/setup.sh

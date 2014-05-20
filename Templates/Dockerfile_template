@@ -37,10 +37,12 @@ MAINTAINER $owner, $owner_email
 #$os_extras
 RUN $update_os
 RUN $install_os_sw $extra_sw
-
+RUN cp -s /usr/bin/docker.io /usr/bin/docker
 
 ADD Container/runfile.sh /var/local/runfile/runfile.sh
+ADD Wrap/wrapdocker /usr/local/bin/wrapdocker
 $additional_commands1
 $additional_commands2
- 
+
+VOLUME /var/lib/docker 
 

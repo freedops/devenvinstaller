@@ -43,6 +43,8 @@ rm -f *.tar
 mkdir Docker
 mkdir Docker/Container
 mkdir installer
+mkdir Docker/Wrap
+cp ../dockdock/dind/wrapdocker Docker/Wrap/wrapdocker
 
 export PYTHONPATH=~/workspace/Freedops/Python/Instance/:~/workspace/Freedops/Python/Props_man:/var/local/project/freedops/Python/Props_man:/var/local/project/freedops/Python/Instance
 python3 Python/create_build.py $1
