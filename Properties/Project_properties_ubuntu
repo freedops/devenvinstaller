@@ -26,7 +26,7 @@ owner: me
 owner_email: me@myproject
 root_dist: ubuntu
 dist_tag: trusty
-extra_sw: git build-essential
+extra_sw: git build-essential docker.io
 version_control: git
 project_location: https://scott_reeve@bitbucket.org/scott_reeve/freedops_test.git
 project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
