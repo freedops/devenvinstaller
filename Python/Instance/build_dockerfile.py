@@ -42,6 +42,10 @@ class BuildDockerfile(object):
     def run_rules(self):
         # check for additional command fields, and add blanks if needed
         try:
+            self.data.get_value('additional_commands0')
+        except:
+            self.data.add('additional_commands0', '', 'No additional commands')
+        try:
             self.data.get_value('additional_commands1')
         except:
             self.data.add('additional_commands1', '', 'No additional commands')

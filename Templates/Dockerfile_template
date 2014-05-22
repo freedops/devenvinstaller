@@ -40,9 +40,10 @@ RUN $install_os_sw $extra_sw
 RUN cp -s /usr/bin/docker.io /usr/bin/docker
 
 ADD Container/runfile.sh /var/local/runfile/runfile.sh
-ADD /usr/local/bin/wrapdocker /usr/local/bin/wrapdocker
+$additional_commands0
 $additional_commands1
 $additional_commands2
 
-VOLUME /var/lib/docker 
+VOLUME /var/lib/docker
+CMD wrapdocker
 

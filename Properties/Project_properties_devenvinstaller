@@ -27,6 +27,7 @@ owner_email: info@freedops
 root_dist: ubuntu
 dist_tag: latest
 extra_sw: git docker.io #iptables ca-certificates lxc cgroup-lite #docker.io 
+additional_commands0: ADD Wrap/wrapdocker /usr/local/bin/wrapdocker
 additional_commands1: RUN chmod +x /usr/local/bin/wrapdocker
 additional_commands2: VOLUME /var/lib/docker
 version_control: git
