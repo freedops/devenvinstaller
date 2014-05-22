@@ -23,7 +23,8 @@
 
 
 # run while in the project directory
-$update_project
+echo Current dir: $PWD
+#$update_project
 $build_command
 $test_command 
 
