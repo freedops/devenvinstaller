@@ -78,6 +78,12 @@ class PlainPickle(object):
     def get_comment(self, key):
         return self.pjc[key]
 
+    def exists(self, key):
+        try:
+            self.get_value(key)
+            return 1
+        except:
+            return 0
 
     def read(self, name='params.txt'):
         '''

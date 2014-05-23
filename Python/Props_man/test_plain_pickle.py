@@ -143,6 +143,11 @@ class Test(unittest.TestCase):
         except:
             assert True
 
+    def testExists(self):
+        TestPickle = plain_pickle.PlainPickle()
+        TestPickle.add('key_1', 'value_1', 'comment_1')
+        assert TestPickle.exists('key_1')
+
     def testSave(self):
         try:
             os.remove('params.txt')
