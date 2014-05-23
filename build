@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # This script builds all the other scripts needed to create_build
 # a project development installer
 
@@ -34,8 +34,8 @@ fi
 
 # clean project files
 rm -rf Docker
-rm -f build_docker.sh
-rm -f setup.sh
+rm -f build_docker
+rm -f setup
 rm -rf installer
 rm -f *.tar
 
@@ -49,5 +49,5 @@ cp /usr/local/bin/wrapdocker Docker/Wrap/wrapdocker
 
 export PYTHONPATH=~/workspace/Freedops/Python/Instance/:~/workspace/Freedops/Python/Props_man:/var/local/project/freedops/Python/Props_man:/var/local/project/freedops/Python/Instance
 python3 Python/create_build.py $1
-sh build_docker.sh
+./build_docker
  

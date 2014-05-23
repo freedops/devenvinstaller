@@ -27,7 +27,9 @@ if __name__ == "__main__":
     from build_from_template import BuildFromTemplate
     from build_runfile import BuildRunfile
     from build_setupfile import BuildSetupfile
-    from build_dockerfile import BuildDockerfile 
+    from build_dockerfile import BuildDockerfile
+    from os import chmod
+    import stat
     
     if len(sys.argv)>1:
         input_file = sys.argv[1]
@@ -36,8 +38,11 @@ if __name__ == "__main__":
         dockerfile_template = 'Templates/Dockerfile_template'
         setup_template = 'Templates/setup_template'
         runfile_template = 'Templates/runfile_template'
-        BuildFromTemplate(build_docker_template, input_file, 'build_docker.sh',
+        BuildFromTemplate(build_docker_template, input_file, 'build_docker',
                           master_file)
+        chmod('build_docker', stat.S_IRUSR + stat.S_IWUSR + stat.S_IXUSR +
+                              stat.S_IRGRP + stat.S_IXGRP +
+                              stat.S_IROTH + stat.S_IXOTH)
         BuildDockerfile(dockerfile_template, input_file, master_file)
         BuildSetupfile(setup_template, input_file, master_file)
         BuildRunfile(runfile_template, input_file, master_file)

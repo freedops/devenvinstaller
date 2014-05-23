@@ -47,7 +47,6 @@ class BuildDockerfile(object):
             additional_str = '{}_{}'.format(extras, numb)
             extras_str = ''
             while self.data.exists(additional_str):
-                print(numb)
                 extras_str = extras_str + '\n' + self.data.get_value(
                                                             additional_str)
                 numb = numb + 1
@@ -55,7 +54,7 @@ class BuildDockerfile(object):
             
             self.data.add(extras, extras_str,
                            'Data for {}'.format(extras))
-            print(extras)
+
        
         # version control
         os = self.data.get_value('root_dist')

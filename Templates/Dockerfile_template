@@ -39,7 +39,7 @@ RUN $update_os
 RUN $install_os_sw $extra_sw
 $additional_os_cmd
 
-ADD Container/runfile.sh /var/local/runfile/runfile.sh
+ADD Container/runfile /var/local/runfile/runfile
 
 $additional_cmd
 

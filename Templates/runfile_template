@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # This file creates a script that updates a project,
 # builds it, then tests it.
 
@@ -23,7 +23,6 @@
 
 
 # run while in the project directory
-echo Current dir: $PWD
 #$update_project
 $build_command
 $test_command 

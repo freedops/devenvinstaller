@@ -23,6 +23,8 @@ along with the freedops.org tools collection.
 If not, see <http://www.gnu.org/licenses/>.
 '''
 from build_from_template import BuildFromTemplate
+from os import chmod
+import stat
 
 
 class BuildRunfile(object):
@@ -35,12 +37,16 @@ class BuildRunfile(object):
     '''
 
     def __init__(self, template, input_file, master_file,
-                 out_file='Docker/Container/runfile.sh'):
+                 out_file='Docker/Container/runfile'):
         '''
         Constructor
         '''
+        print('Build run file')
         BuildFromTemplate.__init__(self, template, input_file, out_file,
                                    master_file)
+        chmod(out_file, stat.S_IRUSR + stat.S_IWUSR + stat.S_IXUSR +
+                                       stat.S_IRGRP + stat.S_IXGRP +
+                                       stat.S_IROTH + stat.S_IXOTH)
 
     def run_rules(self):
         # version control

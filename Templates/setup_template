@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # This file creates a script that takes a docker image
 # sets up a shared volume and load a pre-specified project_destination
 # into it.
@@ -33,7 +33,8 @@ docker run -v $1:$project_destination:rw --workdir="$project_destination" $proje
 docker commit $(docker ps -lq) $project_name
 docker run -v $1:$project_destination:rw --workdir="$project_destination" $project_name chmod -R 777 $project_destination/$project_name
 docker commit $(docker ps -lq) $project_name
-docker run -v $1:$project_destination:rw $project_name ls $project_destination
+docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile
 docker commit $(docker ps -lq) $project_name
-docker run -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name ls
-docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile.sh
+# Create a build and test script
+echo docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile > $1/build_test
+chmod 755 $1/build_test
