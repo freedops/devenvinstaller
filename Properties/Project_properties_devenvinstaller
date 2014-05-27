@@ -35,5 +35,5 @@ additional_cmd_4: VOLUME /var/lib/docker
 version_control: git
 project_location: https://github.com/freedops/devenvinstaller.git
 project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
-build_command: sh build.sh Properties/Project_properties_ubuntu
+build_command: ./build Properties/Project_properties_ubuntu
 test_command: echo finished!
