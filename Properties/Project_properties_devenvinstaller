@@ -28,9 +28,10 @@ root_dist: ubuntu
 dist_tag: latest
 extra_sw: git docker.io #iptables ca-certificates lxc cgroup-lite #docker.io 
 additional_os_cmd_1: RUN cp -s /usr/bin/docker.io /usr/bin/docker
-additional_cmd_1: ADD Wrap/wrapdocker /usr/local/bin/wrapdocker
-additional_cmd_2: RUN chmod +x /usr/local/bin/wrapdocker
-additional_cmd_3: VOLUME /var/lib/docker
+additional_cmd_1: RUN git clone https://github.com/jpetazzo/dind.git /home/dind
+additional_cmd_2: RUN mv /home/dind/wrapdocker /usr/local/bin/wrapdocker
+additional_cmd_3: RUN chmod +x /usr/local/bin/wrapdocker
+additional_cmd_4: VOLUME /var/lib/docker
 version_control: git
 project_location: https://github.com/freedops/devenvinstaller.git
 project_destination: /var/local/project # must not be /var/local, otherwise the runfile will be hidden
