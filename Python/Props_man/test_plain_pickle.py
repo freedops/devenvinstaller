@@ -58,8 +58,8 @@ class Test(unittest.TestCase):
 
     def testReadFile(self):
         TestPickle = plain_pickle.PlainPickle()
-        if TestPickle.read('test.txt'):
-            assert False
+        error_code = TestPickle.read('test.txt')
+        assert error_code == 0, error_code
         values = TestPickle.get_set('key1')
         assert values[0] == 'value1'
         assert values[1] == 'comment 1 s d'
