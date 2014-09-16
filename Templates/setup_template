@@ -35,6 +35,9 @@ docker run -v $1:$project_destination:rw --workdir="$project_destination" $proje
 docker commit $(docker ps -lq) $project_name
 docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile
 docker commit $(docker ps -lq) $project_name
+docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination" $project_name chmod -R 777 $project_destination
+docker commit $(docker ps -lq) $project_name
 # Create a build and test script
 echo docker run --privileged -v $1:$project_destination:rw --workdir="$project_destination/$project_name" $project_name sh /var/local/runfile/runfile > $1/build_test
-chmod 755 $1/build_test
+chmod 755 build_test
+
